@@ -1,0 +1,132 @@
+ Random seed is:   6171356895432295061
+  E4MAIN -W- Initialization file optis.ini not found!
+ Z1OPN1 ---E- Error code: {2}.
+      DIALOGUE SERVICE PROGRAM FOR MINIMIZATION OF NONLINEAR MULTIVARIATE
+                                   FUNCTIONS.
+
+      Programmer Vladimir Volkov                              Version 5.6
+      Latest revision: 09 May 02 03:30 
+
+                 "You can get it wrong and still you think that's alright"
+                 John Lennon & Paul McCartney, "We can work it out", 1965.
+
+                                   ---<*>---
+
+ Dialogue mode [ Interactive / PASSive ] ...... < Inter. >: 
+ OPTIS:  OPTIS:  Welcome to user's problem
+  Enter the series title .................................:   Enter comment line .....................................:  Enter Number of phases ................. <            0 >:  Enter concentration of the system ...... <         .000 >:   Choose type of data file format:.
+                                                       2: ASCII format
+ Enter the format code .................. <            2 >:  Enter INTENSITY file name .............. <         .dat >:    52005.800000000003        525.93899999999996     
+ Angular units in the input file :   
+ 4*pi*sin(theta)/lambda [1/angstrom] (1)
+ 4*pi*sin(theta)/lambda [1/nm      ] (2)
+ 2*   sin(theta)/lambda [1/angstrom] (3)
+  2*   sin(theta)/lambda [1/nm      ] (4) <            1 >:  Enter Fraction of the curve ............ <         .000 >:          601        5000
+  I(1), I(last)    :   52005.800000000003        517.13900000000001     
+  s(1), s(last)    :   4.3810500000000002E-002   2.2840699999999998     
+  Err(1), Err(last):   1118.3699999999999        29.044820000000001     
+ 37-dimensional user's problem
+ OPTIS:  OPTIS:  OPTIS:  //////////////////////////////////////////////////////////////////////
+
+ OPTIS --- Version 5.6 rev. 09 May 02 03:30 reports current information:
+
+ 20-Jan-2020 time 18:54:28
+
+ Objective function -- : User's problem (37-dimensional): 0
+ Chosen algorithm ---- : B-F-G-S with simple bounds
+
+ number of performed function evaluations ----- : 1
+ number of performed iterations --------------- : 0
+ number of performed gradient estimations ----- : 0
+ maximum number of function evaluations ------- : 23680
+ maximum number of search iterations ---------- : 1000
+ total number of problem variables ------------ : 37
+ number of problem variables to be varied ----- : 37
+ maximum allowed number of variables ---------- : 1024
+ function value ------------------------------- : 0.6716
+ rel/abs function tolerance to be attained ---- : 0.0
+ tolerance multiplier switch ------------------ : 0.0           (OFF)
+ upper bound on hessian condition number ------ : 0.0           (OFF)
+ temperature and scedule factor --------------- : 0.0,      0.0
+ function computation noise (rel/abs) --------- : 0.0
+ relative machine precision ------------------- : 2.220e-16
+ message level -------------------------------- : 1
+ ===> Press CR to continue:  ----------------------------------------------------------------------
+ fixative-vector
+      1      1      1      1      1      1      1      1      1      1
+      1      1      1      1      1      1      1      1      1      1
+      1      1      1      1      1      1      1      1      1      1
+      1      1      1      1      1      1      1
+
+ ----------------------------------------------------------------------
+ argument values
+  0.950000       2.23200      0.245000       1.90000      0.200000    
+   0.00000      0.300000      0.833000       6.00000       1.00000    
+   1.00000       2.00000       1.00000       6.00000       1.00000    
+   7.00000       1.00000       8.00000       1.00000       10.0000    
+   1.00000      0.500000       0.00000       0.00000       50.0000    
+   1.00000       50.0000       86.9196       0.00000      5.000000E-03
+   0.00000       0.00000      0.463000       1.00000      0.165300    
+   13.2278       0.00000    
+
+ ----------------------------------------------------------------------
+ lower bounds on variables
+   0.00000       2.23200      0.245000       1.50000      0.100000    
+   0.00000      0.300000      0.833000       6.00000       1.00000    
+   0.00000       2.00000       0.00000       6.00000       0.00000    
+   7.00000       0.00000       8.00000       0.00000       10.0000    
+   0.00000      1.000000E-03   0.00000       0.00000       1.00000    
+   1.00000       1.00000       50.0000       0.00000       0.00000    
+   0.00000       0.00000      0.330700       1.00000      0.132300    
+  0.463000       0.00000    
+
+ ----------------------------------------------------------------------
+ upper bounds on variables
+   1.00000       2.23200      0.245000       2.35000      0.750000    
+   0.00000      0.300000      0.833000       6.00000       1.00000    
+   1.00000       2.00000       1.00000       6.00000       1.00000    
+   7.00000       1.00000       8.00000       1.00000       10.0000    
+   1.00000       1.00000       0.00000       0.00000       500.000    
+   1.00000       200.384       86.9196       0.00000       1.00000    
+   0.00000       0.00000      0.661400       1.00000      0.198400    
+   13.2278       0.00000    
+
+ //////////////////////////////////////////////////////////////////////
+
+ CPU time used:       0 min  0.01 sec
+
+ OPTIS -W- Max. number of function evaluations seems too small: 23680
+           Recommended value: 64000
+ Continue? [ Y / N ] < Yes >:  E4JAF1 --- RETURN CODE =  5
+ OPTIS:  OPTIS:  37-dimensional user's problem
+ Function no. 20,    1678 value =  4.7836788068568878E-02
+ OPTIS:  OPTIS:  "Lest men suspect your tale untrue,
+  Keep probability in view"
+                               John Gay, 1727.
+
+ Are you sure of the solution? [ Y / N ]  < No >: 
+ Remember to save your results before you leave "OPTIS"!
+
+ Exit now? [ Y / N ] .................... < No >: 
+            Well, absolute accuracy requires infinite time...
+
+ ----------------------------- END OF JOB -----------------------------
+
+ Produced function minimum is equal to  0.4783679E-01
+ at the point:
+
+ 
+  5.111869E-02   2.23200      0.245000       1.90000      0.200000    
+   0.00000      0.300000      0.833000       6.00000       1.00000    
+  0.401859       2.00000       1.00000       6.00000       0.00000    
+   7.00000       0.00000       8.00000       0.00000       10.0000    
+  9.669929E-02  1.000000E-03   0.00000       0.00000       1.00000    
+   1.00000       29.6694       86.9196       0.00000       1.00000    
+   0.00000       0.00000      0.507136       1.00000      0.132300    
+   13.2278       0.00000    
+
+
+ after       1678 function evaluations,
+                0 gradient evaluations,
+                0 iterations
+ CPU time used:       0 min 19.83 sec
