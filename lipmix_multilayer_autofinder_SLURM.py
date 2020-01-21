@@ -126,11 +126,11 @@ def generate_lipmix_submission(l,d, dat):
                 f2.write("#SBATCH --export=ALL\n")
                 f2.write("#SBATCH --error=%x.stderrn")
                 f2.write("#SBATCH --output=%x.stdout\n")
-                f2.write("#SBATCH --mail-type=FAIL\n")
+                f2.write("#SBATCH --mail-type=END,FAIL\n")
                 f2.write("#SBATCH --mail-user=agruzinov@embl-hamburg.de\n")
                 f2.write("source /apps/prod/atsas/atsas-env latest\n")
                 f2.write("cd ${SLURM_SUBMIT_DIR}\n")
-                f2.write("../../lipmix <"+fn +"\n")
+                f2.write("lipmix < "+fn +"\n")
                 f2.close()  
                 os.system("sbatch "+fn+"_clust.sh")
 
