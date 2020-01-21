@@ -8,6 +8,9 @@ import shutil
 
 def generate_lipmix_submission(l,d, dat):
 
+    print d, l, dat
+
+
     n_dist = d
     total_l = l
 
