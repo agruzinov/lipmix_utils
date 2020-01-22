@@ -5,6 +5,12 @@ import itertools
 import argparse
 import shutil
 
+#====================================================
+# Plese check options in "Cluster submission section"
+# for the particular cluster in use. Example is written 
+# based on SLURM submission system.
+#====================================================
+
 
 def generate_lipmix_submission(l,d, dat):
 
@@ -140,7 +146,7 @@ def generate_lipmix_submission(l,d, dat):
                 os.chdir("../")
 
 
-parser = argparse.ArgumentParser(description='Wrap-up script to generate multiple input files for LIPMIX with iterative number of layers. Example: python lipmix_multilayer_autofinder.py -i test_lipmix_MLV.dat -l 1 -d 1')
+parser = argparse.ArgumentParser(description='Wrap-up script to generate multiple input files for LIPMIX with iterative number of layers using cluster run. Example: python lipmix_multilayer_autofinder_SLURM.py -i test_lipmix_MLV.dat -l 1 -d 1')
 parser.add_argument("-l", default=1, required=True,type=int, help="Total expected number of layers.")
 parser.add_argument("-d", default=1, required=True,type=int, help="Total expected number of distributions.")
 parser.add_argument("-i", required=True, default="input.dat", type=str, help="Input dat file")
