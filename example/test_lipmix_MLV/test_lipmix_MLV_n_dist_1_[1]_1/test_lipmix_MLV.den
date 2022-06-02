@@ -8,9 +8,10 @@
  Ratio2:     0.000   !! Amplitude ratio (Peak2/Peak1) (positive density) 
  Width3:     0.300   !! Width of peak3 position (negative density) 
  Ratio3:     0.833   !! Amplitude ratio (Peak3/Peak1) (negative density) 
+ Callie parm :    0.050   !! Caille parameter for the bilayer fluctuations    
  NlayerTotal:    1   !! Total number of different multilayer vesicles    
   Nlayer_mix:    1   !! Current number of layers for the vesicle    
-  W_Nlayer_mix:     0.551 !! Weight for the current number of layers for the vesicle  
+  W_Nlayer_mix:     0.555 !! Weight for the current number of layers for the vesicle  
 ---------------------- END OF TITLE ------------------------
 -0.32120E+01  0.18316E-01
 -0.31799E+01  0.23704E-01

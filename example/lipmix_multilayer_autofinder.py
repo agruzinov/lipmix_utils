@@ -61,6 +61,7 @@ def generate_lipmix_submission(l,d, dat):
                 f.write("   0.000     0.000     0.00     !! Amplitude ratio (Peak2/Peak1) (positive density)\n")
                 f.write("   0.300     0.300     0.300     !! Width of peak3 position (negative density)\n")
                 f.write("   0.833     0.833     0.833     !! Amplitude ratio (Peak3/Peak1) (negative density)\n")
+                f.write("0.05    0.01      0.20          !! Callie parameter (measure for the bilayer bending fluctuations\n")
                 
 
                 f.write("   "+str(len(p))+"        "+str(len(p))+"       "+str(len(p))+"       "+"!! Total Number of multilayer vesicles (alwayed FIXED)\n")
@@ -69,7 +70,7 @@ def generate_lipmix_submission(l,d, dat):
                     print (f.write("   1.0      0.0       1.0       !! Weight contribution of vesicle type "+str(pi)+"\n"))
 
                 for dis in np.arange(1,dis+1):
-                    f.write("    SPHERE\n")
+                    f.write("SPHERE\n")
                     f.write("   0.500    0.00100    1.0000    !! Volume fraction of the component (vesicle/micelle)\n")
                     f.write("   0.0000    0.0000    0.0000    !! Inner (core) radius of the sphere\n")
                     f.write("   0.0000    0.0000    0.0000    !! Inner (core) contrast of the sphere\n")
@@ -94,6 +95,7 @@ def generate_lipmix_submission(l,d, dat):
                 f.write("   0.0000    0.0000    0.0000    !! stickiness parameter (for interactions only)\n")
                 f.write(" 2                      !! ASCII format file\n")
                 f.write(dat+"        !! Experimental data file\n")
+                f.write(dat.split(".dat")[0]+"         !! Output prefix name\n")
                 f.write("1                       !! Angular scale (1/2/3/4) as in GNOM\n")
                 f.write("1.0                     !! Exp. data portion to fit (from beginning)\n")
                 f.write("meth sb                 !! Minimization method sb - \"simple bounds\"\n")
