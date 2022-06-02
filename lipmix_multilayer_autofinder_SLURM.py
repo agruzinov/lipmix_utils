@@ -5,11 +5,11 @@ import itertools
 import argparse
 import shutil
 
-#====================================================
+#=======================================================
 # Plese check options in "Cluster submission section"
 # for the particular cluster in use. Example is written 
 # based on SLURM submission system.
-#====================================================
+#=======================================================
 
 
 def generate_lipmix_submission(l,d, dat):
@@ -50,7 +50,7 @@ def generate_lipmix_submission(l,d, dat):
                 f=open(fn,"w")
 
                 
-                                f.write("i\n")
+                f.write("i\n")
                 f.write("!!!!!!!!!!!!!!!\n")
                 f.write("pro us\n")
                 f.write("Series titles\n")
