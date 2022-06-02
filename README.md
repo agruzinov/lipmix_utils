@@ -1,6 +1,6 @@
 # lipmix_utils
 
-Set of python scripts to extend the capabilities of LIPMIX software for analysing small-angle scattering data from lipid systems (as part of the ATSAS package) for example at cluster systems with SLURM queue managment system.
+Set of python scripts to extend the capabilities of the LIPMIX software for analysing small-angle scattering data from lipid systems (as part of the ATSAS package) for example at cluster systems with SLURM queue managment system.
 
 Please refer to the manual of LIPMIX on the official ASAS package:
 https://www.embl-hamburg.de/biosaxs/manuals/lipmix.html
