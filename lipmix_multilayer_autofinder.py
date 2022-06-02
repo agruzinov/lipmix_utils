@@ -63,7 +63,7 @@ def generate_lipmix_submission(l,d, dat):
                 f.write("   0.300     0.300     0.300     !! Width of peak3 position (negative density)\n")
                 f.write("   0.833     0.833     0.833     !! Amplitude ratio (Peak3/Peak1) (negative density)\n")
                 f.write("   0.05    0.01      0.20       !! Callie parameter\n")
-                 f.write("0.05    0.01      0.20          !! Callie parameter (measure for the bilayer bending fluctuations\n")
+                f.write("0.05    0.01      0.20          !! Callie parameter (measure for the bilayer bending fluctuations\n")
                 
 
                 f.write("   "+str(len(p))+"        "+str(len(p))+"       "+str(len(p))+"       "+"!! Total Number of multilayer vesicles (alwayed FIXED)\n")
