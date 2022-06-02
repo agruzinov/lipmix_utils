@@ -6,7 +6,6 @@ import argparse
 import shutil
 
 n_dist = 1
-
 total_l = 1
 
 def generate_lipmix_submission(l,d, dat):
