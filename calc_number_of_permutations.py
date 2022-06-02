@@ -27,7 +27,7 @@ def calc_num_of_permutations(l,d):
                 tot_com = tot_com+1
 
 
-    print "Total number of permutations: ",tot_com*n_dist
+    print ("Total number of permutations: ",tot_com*n_dist)
     
 
     return tot_com 

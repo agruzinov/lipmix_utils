@@ -68,7 +68,7 @@ def generate_lipmix_submission(l,d, dat):
                 f.write("   "+str(len(p))+"        "+str(len(p))+"       "+str(len(p))+"       "+"!! Total Number of multilayer vesicles (alwayed FIXED)\n")
                 for pi in p:
                     f.write("   "+str(pi)+"       "+str(pi)+"       "+str(pi)+"       "+"!! Number of layers for vesicle type"+str(pi)+"\n")
-                    print f.write("   1.0      0.0       1.0       !! Weight contribution of vesicle type "+str(pi)+"\n")
+                    print (f.write("   1.0      0.0       1.0       !! Weight contribution of vesicle type "+str(pi)+"\n"))
 
                 for dis in np.arange(1,dis+1):
                     f.write("    SPHERE\n")
