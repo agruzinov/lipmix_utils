@@ -146,6 +146,7 @@ def generate_lipmix_submission(l,d, dat):
 
                 
                 os.chdir("../")
+     os.chdir("../")
 
 
 #Arguments parser
