@@ -16,11 +16,9 @@ DIFFUSE                         !! Type of the DIFFUSE Phase (SFF approximation)
 0.196   0.080     0.450         !! Width of peak3 position (negative density)
 0.884   0.270     3.890         !! Amplitude ratio (Peak3/Peak1) (negative density)
 0.01    0.01      0.020         !! Callie parameter (measure for the bilayer bending fluctuations)
-   2        2       2       !! Total Number of multilayer vesicles (alwayed FIXED)
+   1        1       1       !! Total Number of multilayer vesicles (alwayed FIXED)
    1       1       1       !! Number of layers for vesicle type1
    1.0      0.0       1.0       !! Weight contribution of vesicle type 1
-   2       2       2       !! Number of layers for vesicle type2
-   1.0      0.0       1.0       !! Weight contribution of vesicle type 2
 SPHERE                          !! Type of the SPHERE Phase (SFF approximation)
 0.5000    0.0000    100.000     !! Volume fraction of the component (vesicle/micelle)
 0.0000    0.0000    0.0000      !! Inner (core) radius of the sphere
@@ -42,8 +40,8 @@ SPHERE
 2                                !! Schulz distribution 2 (Gauss distribution 1)
    0.0000    0.0000    0.0000    !! stickiness parameter (for interactions only)
  2                      !! ASCII format file
-SASDG82.dat        !! Experimental data file
-SASDG82        !! Output prefix name
+SASDG72.dat        !! Experimental data file
+SASDG72        !! Output prefix name
 1                       !! Angular scale (1/2/3/4) as in GNOM
 1.0                     !! Exp. data portion to fit (from beginning)
 meth sb                 !! Minimization method sb - "simple bounds"
