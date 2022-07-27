@@ -26,6 +26,14 @@ This command will go over the sorted list of *.dat files in the current director
 
 Example curves are taken from [SASBDB](https://www.sasbdb.org/project/776/) database.
 
+To obtain the best fits one can run the following command in the current directory:
+```
+python lipmix_extract_min_chi_from_batch.py
+Min chi: 1.7809 SASDG72_n_dist_1_[1_2_3]_7
+Min chi: 6.9491 SASDG82_n_dist_1_[1_2_3]_7
+```
+The results can be found in the "results" directory.
+
 ## Cluster example
 ```
 python lipmix_multilayer_autofinder_SLURM.py -l 10 -d 1 -i test_lipmix_MLV.dat
