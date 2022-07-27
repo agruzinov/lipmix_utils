@@ -14,7 +14,6 @@ If you use results from LIPMIX in your own publication, please cite:
 
 ```
 python lipmix_multilayer_autofinder.py -l 1 -d 1 -i test_lipmix_MLV.dat
-
 ```
 
 This command will create the simplest fit with one distribution and one bilayer. Data is shown for multilayer vesicles. Therefore fit will be not optimal. Only for testing purposes.
@@ -22,7 +21,6 @@ This command will create the simplest fit with one distribution and one bilayer.
 ## Batch example
 ```
 python lipmix_multilayer_autofinder.py -l 3 -d 1 --batch -i *.dat
-
 ```
 This command will go over the sorted list of *.dat files in the current directory and will attempt to fit the data with maximum of 3 layers and one distribution. Results will be saved in the separate directory with the name of current *.dat file. In case of small amount of bilayers this can be run on the local computer and be executed in the resonable abount of time. Useful for time series or temperature scans.
 
