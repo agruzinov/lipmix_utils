@@ -12,9 +12,9 @@ If you use results from LIPMIX in your own publication, please cite:
 
 ## Simple example
 
-'''
+```
 
 python lipmix_multilayer_autofinder.py -l 1 -d 1 -i test_lipmix_MLV.dat
 
-'''
+```
 
