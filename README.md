@@ -27,6 +27,9 @@ This command will go over the sorted list of *.dat files in the current director
 Example curves are taken from [SASBDB](https://www.sasbdb.org/project/776/) database.
 
 ## Cluster example
+```
+python lipmix_multilayer_autofinder_SLURM.py -l 10 -d 1 -i test_lipmix_MLV.dat
+```
 
 This example tries to fit the multilayer vesicles data with up to 10 bilayers in different combinations. Parallel execution is recommended.
 Please check the options in the "Cluster submission" section of the code for the particular cluster in use. The example is written based on the SLURM submission system. This example is used only for demonstration purposes and is most suited for the small number of bilayers expected (~3-5).
