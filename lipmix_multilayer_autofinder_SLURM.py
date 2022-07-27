@@ -148,12 +148,20 @@ def generate_lipmix_submission(l,d, dat):
                 os.chdir("../")
 
 
-parser = argparse.ArgumentParser(description='Wrap-up script to generate multiple input files for LIPMIX with iterative number of layers using cluster run. Example: python lipmix_multilayer_autofinder_SLURM.py -i test_lipmix_MLV.dat -l 1 -d 1')
+#Arguments parser
+parser = argparse.ArgumentParser(description='Wrap-up script to generate multiple input files for LIPMIX with iterative number of layers. Example: python lipmix_multilayer_autofinder.py -i test_lipmix_MLV.dat -l 1 -d 1')
 parser.add_argument("-l", default=1, required=True,type=int, help="Total expected number of layers.")
 parser.add_argument("-d", default=1, required=True,type=int, help="Total expected number of distributions.")
 parser.add_argument("-i", required=True, default="input.dat", type=str, help="Input dat file")
-
+parser.add_argument("-b","--batch",action='store_true', help="Batch mode for all *.dat files in the directory.")
 args = parser.parse_args()
 
-#Main function
-generate_lipmix_submission(args.l, args.d, args.i)
+
+#Main part
+#If Batch mode is selected, than proceed with given params in the current dir.
+if args.batch:
+    for dat in natural_sort(glob.glob(str(args.i))):
+        print (dat)
+        generate_lipmix_submission(args.l, args.d, dat)
+else:
+    generate_lipmix_submission(args.l, args.d, args.i)

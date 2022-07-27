@@ -4,19 +4,26 @@ import glob
 import itertools
 import argparse
 import shutil
+import re
+
+def natural_sort(l): 
+    convert = lambda text: int(text) if text.isdigit() else text.lower()
+    alphanum_key = lambda key: [convert(c) for c in re.split('([0-9]+)', key)]
+    return sorted(l, key=alphanum_key)
 
 
 def generate_lipmix_submission(l,d, dat):
 
-
-    n_dist = d
-    total_l = l
+    # l - number of bilayers
+    # d - number of distributions
 
     directory = dat.split(".dat")[0]
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-    
+    n_dist = d
+
+    total_l = l
 
 
     os.chdir(directory)
@@ -52,18 +59,18 @@ def generate_lipmix_submission(l,d, dat):
                 f.write("Partial data titles\n")
                 f.write("EXPERIMENT\n")
                 f.write(str(dis+2)+"           !! Number of components\n")
-                f.write("0.2000   !! System concentration\n")
-                f.write("DIFFUSE\n")
-                f.write("   0.50    0.0000    100.000    !! Volume fraction of the bilayer component\n")
-                f.write("   2.131   1.421     2.141      !! Peak1 position (positive density)\n")
-                f.write("   0.245     0.245     0.245     !! Width of peak1 position (positive density)\n")
-                f.write("   1.900     1.500     2.350    !! Peak2 position (positive density)\n")
-                f.write("   0.200     0.100     0.750     !! Width of peak2 position (positive density)\n")
-                f.write("   0.000     0.000     0.00     !! Amplitude ratio (Peak2/Peak1) (positive density)\n")
-                f.write("   0.300     0.300     0.300     !! Width of peak3 position (negative density)\n")
-                f.write("   0.833     0.833     0.833     !! Amplitude ratio (Peak3/Peak1) (negative density)\n")
-                f.write("   0.05    0.01      0.20       !! Callie parameter\n")
-                f.write("0.05    0.01      0.20          !! Callie parameter (measure for the bilayer bending fluctuations\n")
+                f.write("0.5000   !! System concentration\n")
+                f.write("DIFFUSE                         !! Type of the DIFFUSE Phase (SFF approximation)\n")
+                f.write("0.50    0.0000    100.000       !! Volume fraction of the bilayer component\n")
+                f.write("3.531   1.421     6.141         !! Peak1 position (positive density)\n")
+                f.write("0.313   0.103     0.523         !! Width of peak1 position (positive density)\n")
+                f.write("1.650   1.440     2.560         !! Peak2 position (positive density)\n")
+                f.write("0.329   0.120     0.340         !! Width of peak2 position (positive density)\n")
+                f.write("0.172   0.000     1.780         !! Amplitude ratio (Peak2/Peak1) (positive density)\n")
+                f.write("0.196   0.080     0.450         !! Width of peak3 position (negative density)\n")
+                f.write("0.884   0.270     3.890         !! Amplitude ratio (Peak3/Peak1) (negative density)\n")
+                f.write("0.01    0.01      0.020         !! Callie parameter (measure for the bilayer bending fluctuations)\n")
+    
                 
 
                 f.write("   "+str(len(p))+"        "+str(len(p))+"       "+str(len(p))+"       "+"!! Total Number of multilayer vesicles (alwayed FIXED)\n")
@@ -72,16 +79,16 @@ def generate_lipmix_submission(l,d, dat):
                     print (f.write("   1.0      0.0       1.0       !! Weight contribution of vesicle type "+str(pi)+"\n"))
 
                 for dis in np.arange(1,dis+1):
-                    f.write("    SPHERE\n")
-                    f.write("   0.500    0.00100    1.0000    !! Volume fraction of the component (vesicle/micelle)\n")
-                    f.write("   0.0000    0.0000    0.0000    !! Inner (core) radius of the sphere\n")
-                    f.write("   0.0000    0.0000    0.0000    !! Inner (core) contrast of the sphere\n")
-                    f.write("  50.0   1.0   500.0    !! Outer (core+shell) radius of the sphere\n")
-                    f.write("   1.0000    1.0000    1.0000    !! Outer (shell) contrast of the sphere\n")
-                    f.write("   50.0    1.0   200.3839    !! Polydisperstiry on the sphere radius\n")
-                    f.write("  86.9196   86.9196   86.9196    !! Hard-sphere radius (for interactions only)\n")
-                    f.write("2                                !! Schulz distribution 2 (Gauss distribution 1)\n")
-                    f.write("   0.0000    0.0000    0.0000    !! stickiness parameter (for interactions only)\n")
+                    f.write("SPHERE                          !! Type of the SPHERE Phase (SFF approximation)\n")
+                    f.write("0.5000    0.0000    100.000     !! Volume fraction of the component (vesicle/micelle)\n")
+                    f.write("0.0000    0.0000    0.0000      !! Inner (core) radius of the sphere\n")
+                    f.write("0.0000    0.0000    0.0000      !! Inner (core) contrast of the sphere\n")
+                    f.write("40.4598   1.7678   80.1518    !! Outer (core+shell) radius of the sphere\n")
+                    f.write("1.0000    1.0000    1.0000      !! Outer (shell) contrast of the sphere\n")
+                    f.write("1.6920    0.1730   17.3839      !! Polydisperstiry on the sphere radius\n")
+                    f.write("400.000   400.000   400.000     !! Hard-sphere radius (for interactions only)\n")
+                    f.write("2                               !! Schulz distribution 2 (Gauss distribution 1)\n")
+                    f.write("0.0000    0.0000    0.0000      !! stickiness parameter (for interactions only)\n")
 
 
 
@@ -91,8 +98,8 @@ def generate_lipmix_submission(l,d, dat):
                 f.write("   0.0000    0.0000    0.0000    !! Inner (core) contrast of the sphere\n")
                 f.write("   0.4630    0.3307    0.6614    !! Outer (core+shell) radius of the sphere\n")
                 f.write("   1.0000    1.0000    1.0000    !! Outer (shell) contrast of the sphere\n")
-                f.write("   0.1653    0.1323    0.1984    !! Polydisperstiry on the sphere radius\n")
-                f.write("  13.2278   13.2278   13.2278    !! Hard-sphere radius (for interactions only)\n")
+                f.write("   0.01653    0.01323    0.1984    !! Polydisperstiry on the sphere radius\n")
+                f.write("  1.2278   1.2278   1.2278    !! Hard-sphere radius (for interactions only)\n")
                 f.write("2                                !! Schulz distribution 2 (Gauss distribution 1)\n")
                 f.write("   0.0000    0.0000    0.0000    !! stickiness parameter (for interactions only)\n")
                 f.write(" 2                      !! ASCII format file\n")
@@ -101,7 +108,7 @@ def generate_lipmix_submission(l,d, dat):
                 f.write("1                       !! Angular scale (1/2/3/4) as in GNOM\n")
                 f.write("1.0                     !! Exp. data portion to fit (from beginning)\n")
                 f.write("meth sb                 !! Minimization method sb - \"simple bounds\"\n")
-                f.write("loa maxit 1000           !! Maximum number of iterations\n")
+                f.write("loa maxit 1000          !! Maximum number of iterations\n")
                 f.write("run\n")
                 f.write("y\n")
                 f.write("y\n")
@@ -122,14 +129,22 @@ def generate_lipmix_submission(l,d, dat):
 
                 os.system("lipmix <"+fn)
                 os.chdir("../")
+    os.chdir("../")
 
-
+#Arguments parser
 parser = argparse.ArgumentParser(description='Wrap-up script to generate multiple input files for LIPMIX with iterative number of layers. Example: python lipmix_multilayer_autofinder.py -i test_lipmix_MLV.dat -l 1 -d 1')
 parser.add_argument("-l", default=1, required=True,type=int, help="Total expected number of layers.")
 parser.add_argument("-d", default=1, required=True,type=int, help="Total expected number of distributions.")
 parser.add_argument("-i", required=True, default="input.dat", type=str, help="Input dat file")
-
+parser.add_argument("-b","--batch",action='store_true', help="Batch mode for all *.dat files in the directory.")
 args = parser.parse_args()
 
-#Main function
-generate_lipmix_submission(args.l, args.d, args.i)
+
+#Main part
+#If Batch mode is selected, than proceed with given params in the current dir.
+if args.batch:
+    for dat in natural_sort(glob.glob(str(args.i))):
+        print (dat)
+        generate_lipmix_submission(args.l, args.d, dat)
+else:
+    generate_lipmix_submission(args.l, args.d, args.i)

@@ -6,17 +6,6 @@ import argparse
 import shutil
 import re
 
-# ============================================================================================
-
-# File: lipmix_multilayer_autofinder_batch.py
-
-# This script follows all the *.dat files in the current directory and creates a folder with 
-# all possible unique combinations of bilayers to obtain the best fit for the mixed micelles. 
-
-# Usage: python lipmix_lipmix_multilayer_autofinder_batch.py
-
-#=============================================================================================
-
 def natural_sort(l): 
     convert = lambda text: int(text) if text.isdigit() else text.lower()
     alphanum_key = lambda key: [convert(c) for c in re.split('([0-9]+)', key)]
@@ -142,8 +131,21 @@ def generate_lipmix_submission(l,d, dat):
                 os.chdir("../")
     os.chdir("../")
 
+#Arguments parser
+parser = argparse.ArgumentParser(description='Wrap-up script to generate multiple input files for LIPMIX with iterative number of layers. Example: python lipmix_multilayer_autofinder.py -i test_lipmix_MLV.dat -l 1 -d 1')
+parser.add_argument("-l", default=1, required=True,type=int, help="Total expected number of layers.")
+parser.add_argument("-d", default=1, required=True,type=int, help="Total expected number of distributions.")
+parser.add_argument("-i", required=True, default="input.dat", type=str, help="Input dat file")
+parser.add_argument("-b","--batch",action='store_true', help="Batch mode for all *.dat files in the directory.")
+args = parser.parse_args()
 
 
-for dat in natural_sort(glob.glob("*.dat")):
-    print (dat)
-    generate_lipmix_submission(3, 1, dat)
+#Main part
+#If Batch mode is selected, than proceed with given params in the current dir.
+if args.batch:
+    for dat in natural_sort(glob.glob(str(args.i))):
+        print (dat)
+        generate_lipmix_submission(args.l, args.d, dat)
+
+else:
+    generate_lipmix_submission(args.l, args.d, args.i)
