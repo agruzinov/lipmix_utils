@@ -33,3 +33,30 @@ python lipmix_multilayer_autofinder_SLURM.py -l 10 -d 1 -i test_lipmix_MLV.dat
 
 This example tries to fit the multilayer vesicles data with up to 10 bilayers in different combinations. Parallel execution is recommended.
 Please check the options in the "Cluster submission" section of the code for the particular cluster in use. The example is written based on the SLURM submission system. This example is used only for demonstration purposes and is most suited for the small number of bilayers expected (~3-5).
+
+Total number of permutation for 10 bilayers can be calculated as follows:
+```
+python calc_number_of_permutations.py -l 10 -d 1
+Total number of permutations:  1023
+```
+Other examples:
+```
+python calc_number_of_permutations.py -l 3 -d 1
+Total number of permutations:  7
+
+python calc_number_of_permutations.py -l 5 -d 1
+Total number of permutations:  31
+
+python calc_number_of_permutations.py -l 7 -d 1
+Total number of permutations:  127
+
+python calc_number_of_permutations.py -l 20 -d 1
+Total number of permutations:  1048575
+
+python calc_number_of_permutations.py -l 25 -d 1
+Total number of permutations:  33554431
+
+python calc_number_of_permutations.py -l 30 -d 1
+Total number of permutations:  1073741823
+```
+
