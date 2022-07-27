@@ -26,7 +26,7 @@ python lipmix_multilayer_autofinder.py -l 3 -d 1 --batch -i *.dat
 ```
 This command will go over the sorted list of *.dat files in the current directory and will attempt to fit the data with maximum of 3 layers and one distribution. Results will be saved in the separate directory with the name of current *.dat file. In case of small amount of bilayers this can be run on the local computer and be executed in the resonable abount of time. Useful for time series or temperature scans.
 
-Example curves are taken from SASBDB entry [SASDG82](https://www.sasbdb.org/data/SASDG82/).
+Example curves are taken from [SASBDB](https://www.sasbdb.org/project/776/) database.
 
 
 
