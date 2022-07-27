@@ -19,12 +19,12 @@ python lipmix_multilayer_autofinder.py -l 1 -d 1 -i test_lipmix_MLV.dat
 This command will create the simplest fit with one distribution and one bilayer. Data is shown for multilayer vesicles; therefore, the fit will not be optimal. Only for testing purposes.
 
 ## Batch example
+
+Example curves are taken from [SASBDB](https://www.sasbdb.org/project/776/) database.
 ```
 python lipmix_multilayer_autofinder.py -l 3 -d 1 -i *.dat
 ```
-This command will go over the sorted list of *.dat files in the current directory and attempt to fit the data with a maximum of 3 layers and 1 distribution. Results will be saved in a separate directory with the name of the current *.dat file. This task can be run on the local computer and be executed in a reasonable amount of time. Useful for time series or temperature scans.
-
-Example curves are taken from [SASBDB](https://www.sasbdb.org/project/776/) database.
+This command will go over the list of *.dat files in the current directory and attempt to fit the data with a maximum of 3 layers and 1 distribution. Results will be saved in a separate directory with the name of the current *.dat file. This task can be run on the local computer and be executed in a reasonable amount of time. Useful for time series or temperature scans.
 
 To obtain the best fits one can run the following command in the current directory:
 ```
