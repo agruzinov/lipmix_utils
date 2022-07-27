@@ -2,7 +2,7 @@
 
 Set of python scripts to extend the capabilities of the LIPMIX software for analyzing small-angle scattering data from lipid systems (as part of the ATSAS package), for example, at cluster systems with SLURM queue management system. 
 
-The scripts are provided "AS IS" and needs to be adapted for the particular case, especially initial parameters of the distributions and electron density peaks. Please refer to the manual of LIPMIX on the official webpage of the ATSAS package: https://www.embl-hamburg.de/biosaxs/manuals/lipmix.html.
+The scripts are provided "AS IS" and need to be adapted for the particular case, especially the initial parameters of the distributions and electron density peaks. Please refer to the manual of LIPMIX on the official webpage of the ATSAS package: https://www.embl-hamburg.de/biosaxs/manuals/lipmix.html.
 
 If you use results from LIPMIX in your publication, please cite:
 
@@ -34,7 +34,7 @@ python lipmix_multilayer_autofinder_SLURM.py -l 10 -d 1 -i test_lipmix_MLV.dat
 This example tries to fit the multilayer vesicles data with up to 10 bilayers in different combinations. Parallel execution is recommended.
 Please check the options in the "Cluster submission" section of the code for the particular cluster in use. The example is written based on the SLURM submission system. This example is used only for demonstration purposes and is most suited for the small number of bilayers expected (~3-5).
 
-Total number of permutation for 10 bilayers can be calculated as follows:
+A total number of permutations for ten bilayers can be calculated as follows:
 ```
 python calc_number_of_permutations.py -l 10 -d 1
 Total number of permutations:  1023
@@ -59,4 +59,9 @@ Total number of permutations:  33554431
 python calc_number_of_permutations.py -l 30 -d 1
 Total number of permutations:  1073741823
 ```
+The cluster batch example repeats the following for the local execution for demonstration:
+```
+python lipmix_multilayer_autofinder_SLURM.py -l 3 -d 1 -i *.dat
+```
+Since the SLURM submissions are happening one after another, one needs to check the available resources. In the case of ten files and ten expected bilayers, this can result in 10230 simultaneous jobs on the cluster.
 
