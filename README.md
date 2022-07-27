@@ -26,5 +26,9 @@ This command will go over the sorted list of *.dat files in the current director
 
 Example curves are taken from [SASBDB](https://www.sasbdb.org/project/776/) database.
 
+## Cluster example
+
+This example tries to fit the multilayer vesicles data with up to 10 bilayers in different combinations. Parallel execution is recommended.
+Plese check options in "Cluster submission" section of the code for the particular cluster in use. Example is written based on SLURM submission system. This example is used only for demonstration purposes and mostly sueted for the small number of bilayers expected (~3-5).
 
 
