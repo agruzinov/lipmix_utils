@@ -10,6 +10,8 @@ If you use results from LIPMIX in your publication, please cite:
 
 # Examples
 
+The overall idea is to try to fit a given scattering curve from unilamellar or multilamellar vesicles with different combinations of a number of bilayers. The main script writes the command file for the LIPMIX with the given combination of a number of bilayers expected and executes it in the assumption that the other parameters like positions and width of the electron density maxima do not change much. See the original paper and manual for a detailed description. For the small number of bilayers, this can be done. Note that the actual physical meaning of the result needs to be assessed separately. 
+
 ## Simple example
 
 ```
@@ -26,13 +28,13 @@ python lipmix_multilayer_autofinder.py -l 3 -d 1 -i *.dat
 ```
 This command will go over the list of *.dat files in the current directory and attempt to fit the data with a maximum of 3 layers and 1 distribution. Results will be saved in a separate directory with the name of the current *.dat file. This task can be run on the local computer and be executed in a reasonable amount of time. Useful for time series or temperature scans.
 
-To obtain the best fits one can run the following command in the current directory:
+To obtain the best fits, one can run the following command in the current directory:
 ```
 python lipmix_extract_min_chi_from_batch.py
 Min chi: 1.7809 SASDG72_n_dist_1_[1_2_3]_7
 Min chi: 6.9491 SASDG82_n_dist_1_[1_2_3]_7
 ```
-The results can be found in the "results" directory.
+The results can be found in the "result" directory.
 
 ## Cluster example
 ```
@@ -72,4 +74,6 @@ The cluster batch example repeats the following for the local execution for demo
 python lipmix_multilayer_autofinder_SLURM.py -l 3 -d 1 -i *.dat
 ```
 Since the SLURM submissions are happening one after another, one needs to check the available resources. In the case of ten files and ten expected bilayers, this can result in 10230 simultaneous jobs on the cluster.
+
+
 
