@@ -10,7 +10,7 @@ If you use results from LIPMIX in your publication, please cite:
 
 # Examples
 
-The overall idea is to try to fit a given scattering curve from unilamellar or multilamellar vesicles with different combinations of a number of bilayers. For the small number of bilayers, this can be done. Note that the actual physical meaning of the result needs to be assessed separately. 
+The overall idea is to try to fit a given scattering curve from unilamellar or multilamellar vesicles with different combinations of a number of bilayers. The main script writes the command file for the LIPMIX with the given combination of a number of bilayers expected and executes it in the assumption that the other parameters like positions and width of the electron density maxima do not change much. See the original paper and manual for a detailed description. For the small number of bilayers, this can be done. Note that the actual physical meaning of the result needs to be assessed separately. 
 
 ## Simple example
 
@@ -74,3 +74,6 @@ The cluster batch example repeats the following for the local execution for demo
 python lipmix_multilayer_autofinder_SLURM.py -l 3 -d 1 -i *.dat
 ```
 Since the SLURM submissions are happening one after another, one needs to check the available resources. In the case of ten files and ten expected bilayers, this can result in 10230 simultaneous jobs on the cluster.
+
+
+
