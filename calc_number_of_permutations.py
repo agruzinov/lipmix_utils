@@ -1,9 +1,6 @@
-import os
 import numpy as np
-import glob
 import itertools
 import argparse
-import shutil
 
 
 def calc_num_of_permutations(l, d):
@@ -24,10 +21,20 @@ def calc_num_of_permutations(l, d):
     return tot_com
 
 
-parser = argparse.ArgumentParser(description='Script to  calculate number of possible permutations LIPMIX input file. '
-                                             'Example: python calc_num_of_permutations.py -l 1 -d 1')
-parser.add_argument("-l", default=1, required=True, type=int, help="Total expected number of layers.")
-parser.add_argument("-d", default=1, required=True, type=int, help="Total expected number of distributions.")
+parser = argparse.ArgumentParser(
+    description="Script to  calculate number of possible permutations LIPMIX input file. "
+    "Example: python calc_num_of_permutations.py -l 1 -d 1"
+)
+parser.add_argument(
+    "-l", default=1, required=True, type=int, help="Total expected number of layers."
+)
+parser.add_argument(
+    "-d",
+    default=1,
+    required=True,
+    type=int,
+    help="Total expected number of distributions.",
+)
 
 args = parser.parse_args()
 

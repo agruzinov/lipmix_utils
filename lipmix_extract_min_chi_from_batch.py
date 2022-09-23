@@ -1,16 +1,18 @@
 import os
 import re
 
+
 def natural_sort(l):
     convert = lambda text: int(text) if text.isdigit() else text.lower()
-    alphanum_key = lambda key: [convert(c) for c in re.split('(\d+)', key)]
+    alphanum_key = lambda key: [convert(c) for c in re.split("(\d+)", key)]
     return sorted(l, key=alphanum_key)
+
 
 directory = "result"
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-#Find all the directories
+# Find all the directories
 file_to_search = "."
 dirlist = []
 for filename in os.listdir(file_to_search):
@@ -37,5 +39,5 @@ for _dir_ in natural_sort(dirlist):
                 chi_.append(float(line.split("Chi^2 =")[1]))
     else:
         pass
-print('Min chi:', min(chi_), chi_val[min(chi_)])
+print("Min chi:", min(chi_), chi_val[min(chi_)])
 os.system("cd " + str(chi_val[min(chi_)]) + "&& cp * ../result")
